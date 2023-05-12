@@ -124,9 +124,6 @@ class Enemy:
 
 
 
-
-        #print(self.walk_queue)
-
         '''
         if to_move_x < 0 and not all([not (entity[0] - self.size < self.pos[0] < entity[2] + entity[0] + to_move_x and
             entity[1] - self.size < self.pos[1] < entity[3] + entity[1]) for entity in map_data]):
