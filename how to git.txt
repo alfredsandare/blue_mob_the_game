@@ -1,0 +1,5 @@
+1. navigera in i mappen
+2. git status
+3. git add game.py
+4. git commit game.py -m 'meddelande'
+5. git push
