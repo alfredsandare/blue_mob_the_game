@@ -77,7 +77,7 @@ class Enemy:
         self.size = 40
         self.vel = 1.5
         self.hp = 3
-        self.coin_drop_chance = 0.5
+        self.coin_drop_chance = 0.8
         self.attack_type = attack_type  # 'hit' or 'shoot'
         self.frames_since_last_attack = 0
 
@@ -89,18 +89,7 @@ class Enemy:
             to_move_x = math.cos(direction) * self.vel
             to_move_y = math.sin(direction) * self.vel
 
-        elif self.behaviour == 'clueless':
-            # just walkin' around
-            if self.walk_queue == None:
-                to_move_x, to_move_y = 0, 0
-                if random.random() < 0.007:  # 0.7% chance
-                    direction = random.random() * 2 * math.pi
-                    self.walk_queue = [math.cos(direction) * self.vel, math.sin(direction) * self.vel, random.randint(30, 120)] 
-            else:
-                to_move_x, to_move_y = self.walk_queue[0], self.walk_queue[1]
-                self.walk_queue[2] -= 1
-                if self.walk_queue[2] == 0:
-                    self.walk_queue = None
+        
 
         elif self.behaviour == 'long-distance':
             # always trying to be between 200-300 pixels from the player
